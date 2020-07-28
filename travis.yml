@@ -1,2 +1,2 @@
 language: csharp
-solution: "./"
+solution: "./LA.Web/LA.Web.cspro"
