@@ -26,8 +26,9 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://85.202.157.225:42200/
-        ftp-username: ftpWebUser
+        ftp-server: ${{ secrets.FTP_ADDRESS }}
+        ftp-username: ${{ secrets.FTP_LOGIN }}
         ftp-password: ${{ secrets.FTP_PASS }}
+        local-dir: ./LocationApplication/
 
 
