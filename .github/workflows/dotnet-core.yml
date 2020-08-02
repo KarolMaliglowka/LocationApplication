@@ -23,5 +23,11 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Test
-      run: dotnet test --no-restore --verbosity normal
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ftp://85.202.157.225:42200/
+        ftp-username: ftpWebUser
+        ftp-password: ${{ secrets.FTP_PASS }}
+
+
