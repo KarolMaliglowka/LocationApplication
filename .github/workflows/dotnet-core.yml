@@ -29,6 +29,6 @@ jobs:
         ftp-server: ${{ secrets.FTP_ADDRESS }}
         ftp-username: ${{ secrets.FTP_LOGIN }}
         ftp-password: ${{ secrets.FTP_PASS }}
-        local-dir: ./LocationApplication/
+        local-dir: LocationApplication
 
 
