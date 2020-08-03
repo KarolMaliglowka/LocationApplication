@@ -21,8 +21,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: dotnet publish
-      run: |
-        dotnet publish --configuration Release --no-restore --output ./publish --self-contained true --framework netcoreapp3.1
+      run: dotnet publish --configuration Release --no-restore --framework netcoreapp3.1 --output ./publish --self-contained true
     - name: List output files
       run: ls
     - name: FTP-Deploy-Action
