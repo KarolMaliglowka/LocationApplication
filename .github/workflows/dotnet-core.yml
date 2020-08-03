@@ -21,7 +21,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: dotnet publish
-      run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore --no-dependencies -f netcoreapp3.1 -r linux-x64 --output ./publish --self-contained false
+      run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore --no-dependencies -r linux-x64 --output ./publish --self-contained false
     - name: List output files
       run: ls
     - name: FTP-Deploy-Action
