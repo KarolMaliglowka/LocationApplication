@@ -23,7 +23,7 @@ jobs:
     - name: dotnet publish
       run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore --no-dependencies -f netcoreapp3.1 --output ./publish --self-contained false
     - name: List output files
-      run: ls
+      run: ls publish
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
