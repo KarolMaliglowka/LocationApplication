@@ -22,7 +22,7 @@ jobs:
       run: dotnet build --configuration Release --no-restore
     - name: dotnet publish
       run: |
-        dotnet publish -c Release -o dotnetcorewebapp
+        dotnet publish --configuration Release --no-restore --output ./publish --self-contained true --runtime win-x86 -p:PublishTrimmed=true
     - name: List output files
       run: ls
     - name: FTP-Deploy-Action
