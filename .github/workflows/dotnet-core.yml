@@ -30,5 +30,4 @@ jobs:
         ftp-server: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
         ftp-username: ${{ secrets.FTP_LOGIN }}
         ftp-password: ${{ secrets.FTP_PASS }}
-        local-dir: /home/runner/work/LocationApplication/LocationApplication/publish/
-        git-ftp-args: --remote-root ./
+        local-dir: ./publish/
