@@ -27,8 +27,10 @@ jobs:
     - name: Local directory
       run: ls
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        ftp-server: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
-        ftp-username: ${{ secrets.FTP_LOGIN }}
-        ftp-password: ${{ secrets.FTP_PASS }}
+        host: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
+        user: ${{ secrets.FTP_LOGIN }}
+        password: ${{ secrets.FTP_PASS }}
+        localDir: "dane"
+        remoteDir: ""
