@@ -37,7 +37,7 @@ jobs:
         # ssh port
         port: ${{ secrets.SSH_PORT }}
         # ssh username
-        username: SSH_LOGIN
+        username: ${{ secrets.SSH_LOGIN }}
         # ssh password
-        password: SSH_PASS
+        password: ${{ secrets.SSH_PASS }}
         script: systemctl restart locationapplication.service
