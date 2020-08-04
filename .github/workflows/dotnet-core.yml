@@ -32,4 +32,4 @@ jobs:
         ftp-server: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
         ftp-username: ${{ secrets.FTP_LOGIN }}
         ftp-password: ${{ secrets.FTP_PASS }}
-        local-dir: /publish
+        local_dir: publish
