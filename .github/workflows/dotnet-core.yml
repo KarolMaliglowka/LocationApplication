@@ -24,10 +24,12 @@ jobs:
       run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore --no-dependencies -f netcoreapp3.1 --output ./publish --self-contained false
     - name: List output files
       run: ls publish
+    - name: Local directory
+      run: pwd
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
         ftp-server: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
         ftp-username: ${{ secrets.FTP_LOGIN }}
         ftp-password: ${{ secrets.FTP_PASS }}
-        local-dir: publish
+        local-dir: ./publish
