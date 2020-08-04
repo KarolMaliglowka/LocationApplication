@@ -29,3 +29,15 @@ jobs:
         user: ${{ secrets.FTP_LOGIN }}
         password: ${{ secrets.FTP_PASS }}
         localDir: "dane"
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.2
+      with:
+        # ssh host
+        host: ${{ secrets.SSH_ADDRESS }}
+        # ssh port
+        port: ${{ secrets.SSH_PORT }}
+        # ssh username
+        username: SSH_LOGIN
+        # ssh password
+        password: SSH_PASS
+        script: systemctl restart locationapplication.service
