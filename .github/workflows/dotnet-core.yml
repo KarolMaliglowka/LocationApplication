@@ -29,8 +29,8 @@ jobs:
     - name: FTP-Deploy-Action
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       env:
-        FTP_SERVER: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
-        FTP_USERNAME: ${{ secrets.FTP_LOGIN }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASS }}
-        LOCAL_DIR: publish
-        ARGS: --delete
+        ftp-server: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
+        ftp-username: ${{ secrets.FTP_LOGIN }}
+        ftp-password: ${{ secrets.FTP_PASS }}
+        local-dir: publish
+        args: --delete
