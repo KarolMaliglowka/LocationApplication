@@ -33,4 +33,4 @@ jobs:
         user: ${{ secrets.FTP_LOGIN }}
         password: ${{ secrets.FTP_PASS }}
         localDir: "dane"
-        remoteDir: ""
+        remoteDir: "./"
