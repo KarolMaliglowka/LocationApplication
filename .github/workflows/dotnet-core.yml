@@ -33,5 +33,4 @@ jobs:
         FTP_USERNAME: ${{ secrets.FTP_LOGIN }}
         FTP_PASSWORD: ${{ secrets.FTP_PASS }}
         LOCAL_DIR: publish
-        METHOD: sftp
         ARGS: --delete
