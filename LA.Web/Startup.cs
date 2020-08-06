@@ -42,7 +42,7 @@ namespace LA.Web
             app.UseRouting();
 
             app.UseAuthorization();
-            app.UsePathBase("./locationapplication/");
+            app.UsePathBase("/locationapplication");
 
             app.UseEndpoints(endpoints =>
             {
