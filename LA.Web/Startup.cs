@@ -38,7 +38,7 @@ namespace LA.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles("/locationapplication");
+            app.UseStaticFiles();
             app.UsePathBase("/locationapplication");
             app.UseRouting();
             app.UseAuthorization();
