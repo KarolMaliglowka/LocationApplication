@@ -40,8 +40,9 @@ namespace LA.Web
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseStaticFiles();
             app.UseAuthorization();
-
+            app.UsePathBase("/locationapplication");
 
             app.UseEndpoints(endpoints =>
             {
@@ -49,7 +50,6 @@ namespace LA.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
         }
     }
 }
