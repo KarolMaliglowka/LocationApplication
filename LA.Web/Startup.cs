@@ -49,6 +49,12 @@ namespace LA.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.Use((context, next) =>
+            {
+                context.Request.PathBase = "/locationapplication";
+                return next();
+            });
         }
     }
 }
