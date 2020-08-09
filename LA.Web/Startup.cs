@@ -40,9 +40,9 @@ namespace LA.Web
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseStaticFiles();
             app.UseAuthorization();
-            app.UsePathBase("/locationapplication");
+            //app.UsePathBase("/locationapplication");
 
             app.UseEndpoints(endpoints =>
             {
