@@ -37,18 +37,27 @@ namespace LA.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            //app.UseStaticFiles();
+
+            //app.UseRouting();
+            //app.UseAuthorization();
+
+
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseStaticFiles();
+
             app.UseAuthorization();
-            app.UsePathBase("/locationapplication");
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "/locationapplication/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
