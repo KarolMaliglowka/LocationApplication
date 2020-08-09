@@ -50,11 +50,7 @@ namespace LA.Web
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            app.Use((context, next) =>
-            {
-                context.Request.PathBase = "/locationapplication";
-                return next();
-            });
+            app.UsePathBase("/locationapplication");
         }
     }
 }
