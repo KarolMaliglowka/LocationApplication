@@ -40,14 +40,6 @@ namespace LA.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles(); // For the wwwroot folder
-
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(
-                                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot")),
-                RequestPath = new PathString("/locationapplication")
-            });
             app.UseRouting();
             app.UseAuthorization();
 
