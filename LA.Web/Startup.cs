@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -48,7 +49,33 @@ namespace LA.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "~/{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.Use(async (context, next) =>
+            {
+                // TODO Check if host is valid based on hosts in ForwardedHeadersOptions
+                if (context.Request.Headers.TryGetValue("X-Path-Base", out var pathBase) &&
+                    context.Request.Path.StartsWithSegments(pathBase.Last(), out var matchedPath, out var remainingPath))
+                {
+                    try
+                    {
+                        var originalPath = context.Request.Path;
+                        var originalPathBase = context.Request.PathBase;
+                        context.Request.PathBase = matchedPath;
+                        context.Request.Path = remainingPath;
+                        await next();
+                    }
+                    finally
+                    {
+                        context.Request.PathBase = new PathString(matchedPath);
+                        context.Request.Path = new PathString(remainingPath);
+                    }
+                }
+                else
+                {
+                    await next();
+                }
             });
         }
     }
