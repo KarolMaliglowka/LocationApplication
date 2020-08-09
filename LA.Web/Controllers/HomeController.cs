@@ -18,6 +18,9 @@ namespace LA.Web.Controllers
             _logger = logger;
         }
 
+        [Route("")]
+        [Route("locationapplication")]
+        [Route("locationapplication/Index")]
         public IActionResult Index()
         {
             return View();

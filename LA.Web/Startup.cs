@@ -43,14 +43,9 @@ namespace LA.Web
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "locationapplication/{controller=Home}/{action=Index}/{id?}");
-            });
 
-           // app.UsePathBase("/locationapplication");
+
+            // app.UsePathBase("/locationapplication");
         }
     }
 }
