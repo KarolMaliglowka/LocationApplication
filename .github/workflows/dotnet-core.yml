@@ -21,7 +21,7 @@ jobs:
     - name: Build project
       run: dotnet build --configuration Release --no-restore
     - name: Publish project
-      run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore -f netcoreapp3.1 --output ./dane --self-contained true
+      run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore -f netcoreapp3.1 --output ./dane --self-contained false
     - name: Send files to FTP repository
       uses: sebastianpopp/ftp-action@releases/v2
       with:
