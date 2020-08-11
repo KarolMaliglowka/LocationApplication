@@ -25,7 +25,7 @@ namespace LA.Web
             services.AddControllersWithViews();
             services.AddLocalization(o =>
             {
-                o.ResourcesPath = "locationapplication";
+                o.ResourcesPath = "locationapplication/";
             });
             services.AddMvc();
         }
