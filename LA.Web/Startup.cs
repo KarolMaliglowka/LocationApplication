@@ -25,7 +25,6 @@ namespace LA.Web
             services.AddControllersWithViews();
             services.AddLocalization(o =>
             {
-                // We will put our translations in a folder called Resources
                 o.ResourcesPath = "locationapplication";
             });
             services.AddMvc();
