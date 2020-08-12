@@ -48,22 +48,17 @@ namespace LA.Web
 
             app.UseAuthorization();
 
-          //  app.UseEndpoints(endpoints =>
-     //       {
-     //           endpoints.MapControllerRoute(
-     //               name: "default",
-     //               pattern: "{controller=Home}/{action=Index}/{id?}");
-     //       });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
 
             var rewriteOptions = new RewriteOptions()
                          .AddRedirect("/", "/locationapplication");
 
             app.UseRewriter(rewriteOptions);
-
-            app.UseEndpoints(endpoints =>
-            {
-                 endpoints.MapControllers();
-            });
         }
     }
 }
