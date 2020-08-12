@@ -42,8 +42,7 @@ namespace LA.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseStaticFiles();
-
+           
             app.UseRouting();
 
             app.UseAuthorization();
@@ -54,11 +53,6 @@ namespace LA.Web
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            var rewriteOptions = new RewriteOptions()
-                         .AddRedirect("/", "/locationapplication");
-
-            app.UseRewriter(rewriteOptions);
         }
     }
 }
