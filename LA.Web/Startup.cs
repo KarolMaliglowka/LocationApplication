@@ -54,7 +54,7 @@ namespace LA.Web
               //      pattern: "locationapplication/{controller=Home}/{action=Index}/{id?}");
            // });
             app.UseMvc(routes => {
-                routes.MapRoute("default", "locationapplication/{controler}/{action}/{id?}")
+                routes.MapRoute("default", "locationapplication/{controler}/{action}/{id?}");
                 }
             );
         }
