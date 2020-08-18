@@ -42,18 +42,14 @@ namespace LA.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-           
             app.UseRouting();
-
             app.UseAuthorization();
-            app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "locationapplication/{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
         }
     }
 }
