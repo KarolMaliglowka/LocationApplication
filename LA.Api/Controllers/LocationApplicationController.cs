@@ -32,7 +32,7 @@ namespace LA.Api.Controllers
         [HttpPost("{tekst}")]
         public async Task<string> PostInfo(string tekst)
         {
-            return "to jest Twój tekst: " + tekst;
+            return "to jest Twój tekst: " + tekst + " " + DateTime.Now;
         }
     }
 }
