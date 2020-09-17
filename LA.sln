@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Infrastructure", "LA.Inf
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Tests", "LA.Tests\LA.Tests.csproj", "{6845FFA9-4BDD-418B-9684-E8621339C909}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Api", "LA.Api\LA.Api.csproj", "{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Api", "LA.Api\LA.Api.csproj", "{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

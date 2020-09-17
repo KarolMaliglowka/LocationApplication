@@ -1,27 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-using LA.Infrastructure.Data;
+using LA.Api.ViewModels.Location;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LA.Api.Controllers
 {
-   
+    [Route("")]
     [ApiController]
     public class LocationApplicationController : ControllerBase
     {
-
         //public readonly DatabaseContext _context;
 
         //public LocationApplicationController(DatabaseContext context)
         //{
         //    _context = context;
         //}
-
 
         // GET: api/<UserController>
         [HttpGet]
@@ -31,11 +26,10 @@ namespace LA.Api.Controllers
         }
 
 
-        [HttpPost("{tekst}")]
-        public async Task<string> PostInfo(string tekst)
+        [HttpPost]
+        public async Task<string> PostLocation([FromBody] CreateLocationViewModel jsondata)
         {
-            return "to jest Twój tekst: " + tekst;
+            return "https://www.openstreetmap.org/#map=9/" + jsondata.PositionX + "/" + jsondata.PositionY ;
         }
-
     }
 }
