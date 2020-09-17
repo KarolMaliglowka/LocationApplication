@@ -12,3 +12,4 @@ install:
 script:
  - msbuild /p:Configuration=Release solution-name.sln
  - dotnet build
+ 
