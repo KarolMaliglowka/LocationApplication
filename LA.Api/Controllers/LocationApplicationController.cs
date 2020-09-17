@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LA.Api.Controllers
 {
+    [Route("")]
     [ApiController]
     public class LocationApplicationController : ControllerBase
     {
