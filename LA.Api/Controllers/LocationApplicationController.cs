@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LA.Api.Controllers
 {
-    [Route("[controller]")]
+   
     [ApiController]
     public class LocationApplicationController : ControllerBase
     {
@@ -31,8 +31,7 @@ namespace LA.Api.Controllers
         }
 
 
-        [HttpPost]
-        [Route("{tekst}")]
+        [HttpPost("{tekst}")]
         public async Task<string> PostInfo(string tekst)
         {
             return "to jest Twój tekst: " + tekst;
