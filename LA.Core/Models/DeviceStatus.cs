@@ -14,8 +14,8 @@ namespace LA.Core.Models
         {
             Id = Guid.NewGuid();
             SetBatteryChargeStatus(batteryChargeStatus);
-            IsCharging = IsCharging;
-            deviceId = deviceId;
+            //IsCharging = IsCharging;
+            //deviceId = deviceId;
             CreateAt();
         }
 
