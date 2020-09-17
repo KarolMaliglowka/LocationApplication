@@ -1,0 +1,43 @@
+name: LocationApplication
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build project
+      run: dotnet build --configuration Release --no-restore
+    - name: Publish project
+      run: dotnet publish ./LA.Web/LA.Web.csproj -c Release --no-restore -f netcoreapp3.1 --output ./dane --self-contained false
+    - name: Send files to FTP repository
+      uses: sebastianpopp/ftp-action@releases/v2
+      with:
+        host: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
+        user: ${{ secrets.FTP_LOGIN }}
+        password: ${{ secrets.FTP_PASS }}
+        localDir: "dane"
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@v0.1.2
+      with:
+        # ssh host
+        host: ${{ secrets.SSH_ADDRESS }}
+        # ssh port
+        port: ${{ secrets.SSH_PORT }}
+        # ssh username
+        username: ${{ secrets.SSH_LOGIN }}
+        # ssh password
+        password: ${{ secrets.SSH_PASS }}
+        script: systemctl restart locationapplication.service

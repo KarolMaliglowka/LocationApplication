@@ -9,7 +9,11 @@ using LA.Web.Models;
 
 namespace LA.Web.Controllers
 {
+<<<<<<< HEAD
     [Route("locationapplication/[controller]")]
+=======
+    [Route("/locationapplication/[controller]")]
+>>>>>>> d1ea41e8e17a1b8f9d0b05853e458e4f0c216829
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -18,7 +22,6 @@ namespace LA.Web.Controllers
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

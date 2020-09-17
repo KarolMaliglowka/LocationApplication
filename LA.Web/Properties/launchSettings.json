@@ -4,7 +4,7 @@
     "anonymousAuthentication": true,
     "launchUrl": "locationapplication/",
     "iisExpress": {
-      "applicationUrl": "http://localhost:49986",
+      "applicationUrl": "http://localhost:59423",
       "sslPort": 0
     }
   },
