@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+using LA.Core.Repositories;
+using LA.Infrastructure.Data;
+using LA.Infrastructure.Repositories;
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,6 +32,10 @@ namespace LA.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext<DatabaseContext>(options =>
+                options.UseNpgsql(
+                     Configuration.GetConnectionString("TempAppString")));
+            services.AddScoped<IDeviceRepository, DeviceRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
