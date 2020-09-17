@@ -7,13 +7,12 @@ namespace LA.Core.Models
     public class Device
     {
 
-       //private IList<Localization> _localization = new List<Localization>();
-
-
         public Guid Id { get; set; }
         public string Name { get; set; }
-
-        //public IEnumerable<Localization> Localization => _localization;
-        public DeviceStatus deviceStatus { get; set; }
+        public string Description { get; set; }
+        public DateTime CreateAt { get; set; }
+        public DateTime UpdateAt { get; set; }
+        public Guid LocationId {get; set; }
+        public Location location { get; set; }
     }
 }

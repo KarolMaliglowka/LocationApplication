@@ -9,6 +9,7 @@ using LA.Web.Models;
 
 namespace LA.Web.Controllers
 {
+    [Route("locationapplication/[controller]")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

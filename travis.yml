@@ -2,19 +2,13 @@ language: csharp
 solution: LA.sln
 
 mono: none
-dotnet: 3.1.301
+dotnet: 3.1
 script:
-    - dotnet restore
+ - dotnet restore
 
-    install:
-        - nuget restore solution-name.sln
-        - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
-    script:
-        - msbuild /p:Configuration=Release solution-name.sln
-
-env:
-    global:
-        - "FTP_USER=user"
-        - "FTP_PASSWORD=password"
-    after_success:
-        "curl -T index.html -u $FTP_USER:$FTP_PASSWORD ftp://.../public_html/"
+install:
+ - nuget restore solution-name.sln
+ - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
+ - msbuild /p:Configuration=Release solution-name.sln
+ - dotnet build

@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+
+    <ProjectReference Include="..\LA.Core\LA.Core.csproj" />
     <ProjectReference Include="..\LA.Infrastructure\LA.Infrastructure.csproj" />
   </ItemGroup>
 
