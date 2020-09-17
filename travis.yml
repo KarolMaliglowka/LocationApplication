@@ -1,2 +1,14 @@
 language: csharp
-solution: "./LA.Web/LA.Web.cspro"
+solution: LA.sln
+
+mono: none
+dotnet: 3.1
+script:
+ - dotnet restore
+
+install:
+ - nuget restore solution-name.sln
+ - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
+ - msbuild /p:Configuration=Release solution-name.sln
+ - dotnet build

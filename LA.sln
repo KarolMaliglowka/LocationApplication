@@ -3,18 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Core", "LA.Core\LA.Core.csproj", "{EE396A6D-C636-4D4B-8999-B5D5E246A5E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Core", "LA.Core\LA.Core.csproj", "{EE396A6D-C636-4D4B-8999-B5D5E246A5E6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{91066C66-BFEC-43E5-B3DF-6445B210718C}"
-	ProjectSection(SolutionItems) = preProject
-		travis.yml = travis.yml
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Infrastructure", "LA.Infrastructure\LA.Infrastructure.csproj", "{E79C09EE-F1AC-4BB0-A83B-0C689C46C797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Infrastructure", "LA.Infrastructure\LA.Infrastructure.csproj", "{E79C09EE-F1AC-4BB0-A83B-0C689C46C797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Tests", "LA.Tests\LA.Tests.csproj", "{6845FFA9-4BDD-418B-9684-E8621339C909}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Tests", "LA.Tests\LA.Tests.csproj", "{6845FFA9-4BDD-418B-9684-E8621339C909}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Web", "LA.Web\LA.Web.csproj", "{F4E0A4C6-C892-447D-9DF8-17E01E7A87B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Api", "LA.Api\LA.Api.csproj", "{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +29,10 @@ Global
 		{6845FFA9-4BDD-418B-9684-E8621339C909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6845FFA9-4BDD-418B-9684-E8621339C909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6845FFA9-4BDD-418B-9684-E8621339C909}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4E0A4C6-C892-447D-9DF8-17E01E7A87B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4E0A4C6-C892-447D-9DF8-17E01E7A87B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4E0A4C6-C892-447D-9DF8-17E01E7A87B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4E0A4C6-C892-447D-9DF8-17E01E7A87B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
