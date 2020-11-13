@@ -22,10 +22,11 @@ namespace LA.Infrastructure.Repositories
                 .FirstAsync(x => x.Id == id);
         }
 
-        public async Task Create(Device device)
+        public async Task<Guid> Create(Device device)
         {
             await _context.Devices.AddAsync(device);
             await _context.SaveChangesAsync();
+            return device.Id;
         }
 
         public async Task Update(Device device)
