@@ -16,13 +16,11 @@ namespace LA.Core.Models
         
         private List<Location> _locations = new List<Location>();
         
-        public Guid Id { get;}
+        public Guid Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
-        public Location Location { get; set; }
-        public Guid LocationId { get; set; }
 
         public IEnumerable<Location> Locations => _locations.AsReadOnly();
 

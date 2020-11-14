@@ -16,6 +16,9 @@ namespace LA.Infrastructure.Data.Configuration
             builder.Property(x => x.CreatedAt);
             builder.Property(x => x.UpdatedAt);
 
+            builder.Ignore(x => x.Locations);
+
+
             builder.HasMany(x => x.Locations)
                 .WithOne(x => x.Device)
                 .OnDelete(DeleteBehavior.Restrict);

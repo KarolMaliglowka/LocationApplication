@@ -20,7 +20,7 @@ namespace LA.Core.Models
             CreateAt();
         }
         
-        public Guid Id { get;}
+        public Guid Id { get; set; }
         public double? PositionX { get; private set; }
         public double? PositionY { get; private set; }
         public double? PositionZ { get; private set; }
