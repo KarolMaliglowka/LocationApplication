@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LA.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class DeviceController : ControllerBase
     {
@@ -31,6 +31,12 @@ namespace LA.Api.Controllers
         {
             var newDevice = new Device(device.Name);
             return await _deviceRepository.Create(newDevice);
+        }
+
+        [HttpGet("Info")]
+        public ContentResult Info()
+        {
+            return Content("Tojest wstepna informacja o dodawaniu urządzeń.");
         }
     }
 }

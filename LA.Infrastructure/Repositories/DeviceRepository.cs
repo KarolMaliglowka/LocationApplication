@@ -41,5 +41,9 @@ namespace LA.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> Exist(string name)
+        {
+            return await _context.Devices.AnyAsync(x => x.Name == name);
+        }
     }
 }
