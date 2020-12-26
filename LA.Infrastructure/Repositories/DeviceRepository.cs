@@ -22,10 +22,11 @@ namespace LA.Infrastructure.Repositories
                 .FirstAsync(x => x.Id == id);
         }
 
-        public async Task Create(Device device)
+        public async Task<Guid> Create(Device device)
         {
             await _context.Devices.AddAsync(device);
             await _context.SaveChangesAsync();
+            return device.Id;
         }
 
         public async Task Update(Device device)
@@ -40,5 +41,9 @@ namespace LA.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
+        public async Task<bool> Exist(string name)
+        {
+            return await _context.Devices.AnyAsync(x => x.Name == name);
+        }
     }
 }
