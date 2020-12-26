@@ -10,5 +10,6 @@ namespace LA.Core.Repositories
         Task<Guid> Create(Device device);
         Task Update(Device device);
         Task Delete(Device device);
+        Task<bool> ExistByPhoneId(string phoneId);
     }
 }
