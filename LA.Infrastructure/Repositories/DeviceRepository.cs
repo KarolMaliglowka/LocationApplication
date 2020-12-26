@@ -45,5 +45,11 @@ namespace LA.Infrastructure.Repositories
         {
             return await _context.Devices.AnyAsync(x => x.Name == name);
         }
+
+        public async Task<bool> ExistByPhoneId(string phoneId)
+        {
+            return await _context.Devices
+                .AnyAsync(x => x.PhoneId == phoneId);
+        }
     }
 }

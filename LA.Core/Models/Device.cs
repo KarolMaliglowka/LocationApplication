@@ -7,10 +7,11 @@ namespace LA.Core.Models
     {
         protected Device() {}
 
-        public Device(string name)
+        public Device(string name, string phoneId)
         {
             Id = Guid.NewGuid();
             SetName(name);
+            SetPhoneId(phoneId);
             CreateAt();
         }
         
@@ -19,6 +20,7 @@ namespace LA.Core.Models
         public Guid Id { get; set; }
         public string Name { get; private set; }
         public string Description { get; private set; }
+        public string PhoneId { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; private set; }
 
@@ -37,6 +39,17 @@ namespace LA.Core.Models
             }
             
             Name = name;
+            UpdateAt();
+        }
+
+        private void SetPhoneId(string phoneId)
+        {
+            if (string.IsNullOrWhiteSpace(phoneId))
+            {
+                throw new ArgumentNullException(nameof(phoneId), "Device name cannot be empty.");
+            }
+
+            PhoneId = phoneId;
             UpdateAt();
         }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using BenchmarkDotNet.Attributes;
 using LA.Api.ViewModels.Device;
 using LA.Core.Models;
 using LA.Core.Repositories;
@@ -26,10 +27,22 @@ namespace LA.Api.Controllers
         }
 
         // GET: api/<UserController>
+        [Benchmark]
         [HttpPost]
-        public async Task<Guid> AddDevice([FromBody] CreateDeviceViewModel device)
+        public async Task<Guid> AddDevice([FromBody]CreateDeviceViewModel device)
         {
-            var newDevice = new Device(device.Name);
+            var applicationId = "EF05D54D-2590-4BCB-ADCD-70B8E2B05A98";
+            if (device.ApplicationId != applicationId)
+            {
+                return Guid.Empty;
+            }
+
+            if (await _deviceRepository.ExistByPhoneId(device.DeviceInfo.PhoneId))
+            {
+                return Guid.Empty;
+            }
+
+            var newDevice = new Device(device.DeviceInfo.Name, device.DeviceInfo.PhoneId);
             return await _deviceRepository.Create(newDevice);
         }
 
