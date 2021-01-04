@@ -49,7 +49,7 @@ namespace LA.Api.Controllers
         [HttpGet("Info")]
         public ContentResult Info()
         {
-            return Content("Tojest wstepna informacja o dodawaniu urządzeń.");
+            return Content("To jest wstepna informacja o dodawaniu urządzeń.");
         }
     }
 }
