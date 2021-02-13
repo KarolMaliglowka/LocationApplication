@@ -22,7 +22,7 @@ namespace LA.Api.Controllers
         [HttpGet]
         public async Task<string> GetInfo()
         {
-            return "Test API";
+            return "Test API location application";
         }
     }
 }
