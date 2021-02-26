@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BenchmarkDotNet.Attributes;
 using LA.Api.ViewModels.Device;
 using LA.Core.Models;
 using LA.Core.Repositories;
-using LA.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LA.Api.Controllers
@@ -13,40 +11,38 @@ namespace LA.Api.Controllers
     [ApiController]
     public class DeviceController : ControllerBase
     {
-        public readonly DatabaseContext _context;
         private readonly IDeviceRepository _deviceRepository;
 
         public DeviceController
         (
-            IDeviceRepository deviceRepository,
-            DatabaseContext context
+            IDeviceRepository deviceRepository
         )
         {
-            _context = context;
             _deviceRepository = deviceRepository;
         }
 
-        // GET: api/<UserController>
-        [Benchmark]
-        [HttpPost]
-        public async Task<Guid> AddDevice([FromBody]CreateDeviceViewModel device)
+        [HttpPost("AddDevice")]
+        public async Task<ActionResult> AddDevice([FromBody]CreateDeviceViewModel device)
         {
             var applicationId = "EF05D54D-2590-4BCB-ADCD-70B8E2B05A98";
+            
             if (device.ApplicationId != applicationId)
             {
-                return Guid.Empty;
+                return NotFound(Guid.Empty);
             }
 
             if (await _deviceRepository.ExistByPhoneId(device.DeviceInfo.PhoneId))
             {
-                return Guid.Empty;
+                return NotFound(Guid.Empty);
             }
 
             var newDevice = new Device(device.DeviceInfo.Name, device.DeviceInfo.PhoneId);
-            return await _deviceRepository.Create(newDevice);
+            await _deviceRepository.Create(newDevice);
+            
+            return Ok(newDevice.Id);
         }
 
-        [HttpGet("Info")]
+        [HttpGet]
         public ContentResult Info()
         {
             return Content("To jest wstepna informacja o dodawaniu urządzeń.");

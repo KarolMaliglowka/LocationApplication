@@ -22,11 +22,10 @@ namespace LA.Infrastructure.Repositories
                 .FirstAsync(x => x.Id == id);
         }
 
-        public async Task<Guid> Create(Device device)
+        public async Task Create(Device device)
         {
             await _context.Devices.AddAsync(device);
             await _context.SaveChangesAsync();
-            return device.Id;
         }
 
         public async Task Update(Device device)
@@ -49,7 +48,9 @@ namespace LA.Infrastructure.Repositories
         public async Task<bool> ExistByPhoneId(string phoneId)
         {
             return await _context.Devices
-                .AnyAsync(x => x.PhoneId == phoneId);
+                .AnyAsync(x => string.Equals(
+                    x.PhoneId,
+                    phoneId));
         }
     }
 }
