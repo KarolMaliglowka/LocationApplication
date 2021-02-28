@@ -21,10 +21,10 @@ namespace LA.Api.Controllers
         }
 
         [HttpPost("AddDevice")]
-        public async Task<ActionResult> AddDevice([FromBody]CreateDeviceViewModel device)
+        public async Task<ActionResult> AddDevice([FromBody] CreateDeviceViewModel device)
         {
             var applicationId = "EF05D54D-2590-4BCB-ADCD-70B8E2B05A98";
-            
+
             if (device.ApplicationId != applicationId)
             {
                 return Content("Wrong application ID.");
@@ -37,14 +37,14 @@ namespace LA.Api.Controllers
 
             var newDevice = new Device(device.DeviceInfo.Name, device.DeviceInfo.PhoneId);
             await _deviceRepository.Create(newDevice);
-            
+
             return Ok(newDevice.Id);
         }
 
         [HttpGet]
         public ContentResult Info()
         {
-            return Content("api information:\n - adding a device\n - adding a location");
+            return Content("API information:\n - adding a device");
         }
     }
 }

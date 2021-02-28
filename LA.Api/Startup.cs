@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LA.Core.Repositories;
 using LA.Infrastructure.Data;
 using LA.Infrastructure.Repositories;
@@ -31,6 +27,7 @@ namespace LA.Api
                 options.UseNpgsql(
                      Configuration.GetConnectionString("TempAppString")));
             services.AddScoped<IDeviceRepository, DeviceRepository>();
+            services.AddScoped<ILocationRepository, LocationRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
