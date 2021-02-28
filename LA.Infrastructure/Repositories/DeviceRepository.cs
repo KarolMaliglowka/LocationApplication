@@ -2,7 +2,6 @@
 using LA.Core.Repositories;
 using LA.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading.Tasks;
 
 namespace LA.Infrastructure.Repositories
@@ -16,10 +15,10 @@ namespace LA.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Device> GetById(Guid id)
+        public async Task<Device> GetById(string id)
         {
             return await _context.Devices
-                .FirstAsync(x => x.Id == id);
+                .FirstAsync(x => x.Id.ToString() == id);
         }
 
         public async Task Create(Device device)
@@ -49,7 +48,7 @@ namespace LA.Infrastructure.Repositories
         {
             return await _context.Devices
                 .AnyAsync(x => string.Equals(
-                    x.PhoneId,
+                    x.Id.ToString(),
                     phoneId));
         }
     }

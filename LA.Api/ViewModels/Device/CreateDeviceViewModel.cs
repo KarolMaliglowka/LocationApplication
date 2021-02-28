@@ -1,5 +1,4 @@
-﻿
-namespace LA.Api.ViewModels.Device
+﻿namespace LA.Api.ViewModels.Device
 {
     public class CreateDeviceViewModel
     {

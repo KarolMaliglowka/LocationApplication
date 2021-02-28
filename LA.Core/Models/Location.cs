@@ -8,7 +8,8 @@ namespace LA.Core.Models
         {
         }
 
-        public Location(Device device, double? positionX, double? positionY, double? positionZ, int batteryChargeStatus, bool isCharging)
+        public Location(Device device, double? positionX, double? positionY, double? positionZ, int batteryChargeStatus,
+            bool isCharging)
         {
             Id = Guid.NewGuid();
             SetDevice(device);
@@ -19,7 +20,7 @@ namespace LA.Core.Models
             SetIsCharging(isCharging);
             CreateAt();
         }
-        
+
         public Guid Id { get; set; }
         public double? PositionX { get; private set; }
         public double? PositionY { get; private set; }
@@ -36,11 +37,13 @@ namespace LA.Core.Models
             PositionX = positionX;
             UpdateAt();
         }
+
         private void SetPositionY(double? positionY)
         {
             PositionY = positionY;
             UpdateAt();
         }
+
         private void SetPositionZ(double? positionZ)
         {
             PositionZ = positionZ;
@@ -58,11 +61,14 @@ namespace LA.Core.Models
         {
             if (batteryChargeStatus < 0)
             {
-                throw new ArgumentException(nameof(batteryChargeStatus), "Battery charge status show wrong value. Below 0%");
+                throw new ArgumentException(nameof(batteryChargeStatus),
+                    "Battery charge status show wrong value. Below 0%");
             }
+
             if (batteryChargeStatus > 100)
             {
-                throw new ArgumentException(nameof(batteryChargeStatus), "Battery charge status show wrong value. More than 100%");
+                throw new ArgumentException(nameof(batteryChargeStatus),
+                    "Battery charge status show wrong value. More than 100%");
             }
 
             BatteryChargeStatus = batteryChargeStatus;
@@ -75,7 +81,14 @@ namespace LA.Core.Models
             UpdateAt();
         }
 
-        private void UpdateAt() { UpdatedAt = DateTime.UtcNow; }
-        private void CreateAt() { CreatedAt = DateTime.UtcNow; }
+        private void UpdateAt()
+        {
+            UpdatedAt = DateTime.UtcNow;
+        }
+
+        private void CreateAt()
+        {
+            CreatedAt = DateTime.UtcNow;
+        }
     }
 }
