@@ -38,7 +38,7 @@ namespace LA.Api.Controllers
             var newDevice = new Device(device.DeviceInfo.Name, device.DeviceInfo.PhoneId);
             await _deviceRepository.Create(newDevice);
             
-            return Ok(newDevice.Id);
+            return Ok(newDevice.Id);//
         }
 
         [HttpGet]
