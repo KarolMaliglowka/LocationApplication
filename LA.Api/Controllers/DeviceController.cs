@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using LA.Api.ViewModels.Device;
 using LA.Core.Models;
 using LA.Core.Repositories;
@@ -28,12 +27,12 @@ namespace LA.Api.Controllers
             
             if (device.ApplicationId != applicationId)
             {
-                return NotFound(Guid.Empty);
+                return Content("Wrong application ID.");
             }
 
             if (await _deviceRepository.ExistByPhoneId(device.DeviceInfo.PhoneId))
             {
-                return NotFound(Guid.Empty);
+                return Content("This phone is already registered.");
             }
 
             var newDevice = new Device(device.DeviceInfo.Name, device.DeviceInfo.PhoneId);
@@ -45,7 +44,7 @@ namespace LA.Api.Controllers
         [HttpGet]
         public ContentResult Info()
         {
-            return Content("Tojest wstepna informacja o dodawaniu urządzeń.");
+            return Content("api information:\n - adding a device\n - adding a location");
         }
     }
 }
