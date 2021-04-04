@@ -1,5 +1,4 @@
 ﻿using LA.Core.Models;
-using LA.Infrastructure.Data.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace LA.Infrastructure.Data
