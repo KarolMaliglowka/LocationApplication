@@ -4,12 +4,17 @@ namespace LA.Core.Models
 {
     public class Location
     {
-        protected Location()
-        {
-        }
+        protected Location() {}
 
-        public Location(Device device, double? positionX, double? positionY, double? positionZ, int batteryChargeStatus,
-            bool isCharging)
+        public Location
+        (
+            Device device,
+            double? positionX,
+            double? positionY,
+            double? positionZ,
+            int batteryChargeStatus,
+            bool isCharging
+        )
         {
             Id = Guid.NewGuid();
             SetDevice(device);
@@ -21,7 +26,7 @@ namespace LA.Core.Models
             CreateAt();
         }
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
         public double? PositionX { get; private set; }
         public double? PositionY { get; private set; }
         public double? PositionZ { get; private set; }
