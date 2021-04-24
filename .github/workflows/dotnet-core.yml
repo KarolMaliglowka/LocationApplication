@@ -19,12 +19,18 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
           dotnet-version: '5.0.202'
-
+    
+    - name: dir1
+      run: ls
+      
     - name: Install dependencies
       run: cd src
       
-    - name: dir
+    - name: dir2
       run: ls
+      
+    - name: Install dependencies
+      run: cd src
       
     - name: Install dependencies
       run: dotnet restore
