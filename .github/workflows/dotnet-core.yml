@@ -9,6 +9,7 @@ on:
       - master
 jobs:
   build:
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,6 +32,9 @@ jobs:
       run: dotnet build --configuration Release --no-restore
       
     - name: Publish project
+      run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
+      
+    - name: Publish projectq
       run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
       
     - name: Send files to FTP repository ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
