@@ -21,6 +21,9 @@ jobs:
           dotnet-version: '5.0.202'
 
     - name: Install dependencies
+      run: cd src
+      
+    - name: Install dependencies
       run: dotnet restore
       
     - name: Build project
