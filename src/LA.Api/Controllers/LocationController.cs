@@ -27,7 +27,7 @@ namespace LA.Api.Controllers
         [HttpGet]
         public ContentResult Info()
         {
-            return Content("API information:\n - adding location");
+            return Content("API information:\n - adding location\n - JSON");
         }
         
         [HttpPost("AddLocation")]
