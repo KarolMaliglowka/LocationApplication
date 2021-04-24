@@ -18,17 +18,14 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-          dotnet-version: '5.0.x'
+          dotnet-version: '5.0.202'
 
     - name: Install dependencies
       run: dotnet restore
       
     - name: Build project
       run: dotnet build --configuration Release --no-restore
-      
-    - name: Publish project
-      run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
-      
+    
     - name: Publish projectq
       run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
       
