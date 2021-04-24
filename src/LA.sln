@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Tests", "LA.Tests\LA.Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LA.Api", "LA.Api\LA.Api.csproj", "{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LA.Desktop", "LA.Desktop\LA.Desktop.csproj", "{3F290CF3-80FF-4DBA-AAD0-589AE018B95A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DA8C58C-2133-4FA8-A5A4-0EEAA5C65FF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F290CF3-80FF-4DBA-AAD0-589AE018B95A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F290CF3-80FF-4DBA-AAD0-589AE018B95A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F290CF3-80FF-4DBA-AAD0-589AE018B95A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F290CF3-80FF-4DBA-AAD0-589AE018B95A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
