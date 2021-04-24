@@ -7,7 +7,11 @@ namespace LA.Core.Models
     {
         protected Device() {}
 
-        public Device(string name, string phoneId)
+        public Device
+        (
+            string name,
+            string phoneId
+        )
         {
             Id = Guid.NewGuid();
             SetName(name);
