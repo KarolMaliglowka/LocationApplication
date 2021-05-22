@@ -18,7 +18,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-          dotnet-version: '5.0.202'
+          dotnet-version: '5.0.x'
 
     - name: Install dependencies
       working-directory: ./src
@@ -27,7 +27,7 @@ jobs:
     - name: Build project
       run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
       
-    - name: Send files to FTP repository ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
+    - name: Send files to FTP repository
       uses: sebastianpopp/ftp-action@releases/v2
       with:
         host: ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
