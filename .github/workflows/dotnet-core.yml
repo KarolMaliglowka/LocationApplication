@@ -25,8 +25,8 @@ jobs:
       run: dotnet restore
       
     - name: Build project
-      working-directory: ./src
-      run: dotnet publish ./LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
+      
+      run: dotnet publish ./src/LA.Api/LA.Api.csproj -c Release --no-restore -f net5.0 --output ./dane --self-contained false
       
     - name: Send files to FTP repository ${{ secrets.FTP_ADDRESS }}${{ secrets.FTP_PATH }}
       uses: sebastianpopp/ftp-action@releases/v2
