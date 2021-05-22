@@ -25,7 +25,7 @@ namespace LA.Api.Controllers
         {
             if (await _deviceRepository.ExistByPhoneId(device.PhoneId))
             {
-                return Content("This phone is already registered.");
+                return Content("This device is already registered.");
             }
 
             var newDevice = new Device(device.Name, device.PhoneId);
