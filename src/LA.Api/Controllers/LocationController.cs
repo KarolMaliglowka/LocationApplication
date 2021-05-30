@@ -27,22 +27,18 @@ namespace LA.Api.Controllers
         [HttpGet]
         public ContentResult Info()
         {
-
             return Content("API information:\n - adding location\n - JSON");
-
         }
         
         [HttpPost("AddLocation")]
         public async Task<ActionResult> AddLocation([FromBody]CreateLocationViewModel location)
         {
-            
             if (!await _deviceRepository.ExistByPhoneId(location.DeviceId))
             {
                 return Content("Wrong device ID.");
             }
 
             var device = await _deviceRepository.GetById(location.DeviceId);
-
             var newLocation = new Location(
                 device,
                 double.Parse(location.LocationInfo.PositionX),
