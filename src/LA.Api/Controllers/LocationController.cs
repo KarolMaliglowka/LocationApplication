@@ -10,7 +10,6 @@ namespace LA.Api.Controllers
     [ApiController]
     public class LocationController : ControllerBase
     {
-        
         private readonly ILocationRepository _locationRepository;
         private readonly IDeviceRepository _deviceRepository;
         
